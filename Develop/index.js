@@ -1,8 +1,7 @@
 // TODO: Include packages needed for this application
 const {prompt} = require('inquirer');
-const {writeFile, appendFile} = require('fs');
+const {writeFile} = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-const renderLicenseSection = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const userInput = (message, required = false) =>
@@ -39,10 +38,7 @@ async function init() {
         whatLearn: await userInput("What did you learn?\n", true),
     };
 
-    const {license} = data;
-
     const readme = generateMarkdown(data);
-    const licenseSection = renderLicenseSection(license)
     
     // TODO: Create a function to write README file
     writeFile('README.md', readme, err => {
