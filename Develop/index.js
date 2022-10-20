@@ -28,27 +28,26 @@ async function init() {
     const data = {
         yourName: await userInput("What is your name?", true),
         projName: await userInput("What is the name of the project?", true),
-        license: await userInput("What is the license used?", true),
-        linkedIn: await userInput("What is your LinkedIn ID?"),
+        license: await userInput("What is the license used?"),
         gitHub: await userInput("What is your GitHub ID?", true),
+        linkedIn: await userInput("What is your LinkedIn ID?"),
+        email: await userInput("What is your email address?"),
+        phone: await userInput("What is your phone number?"),
         motivation: await userInput("What was your motivation?\n", true),
         why: await userInput("Why did you build this project?\n", true),
         whatSolve: await userInput("What problem does it solve?\n", true),
         whatLearn: await userInput("What did you learn?\n", true),
     };
 
-    const {licenseUsed} = data;
+    const {license} = data;
 
     const readme = generateMarkdown(data);
-    const licenseSection = renderLicenseSection(licenseUsed)
+    const licenseSection = renderLicenseSection(license)
     
     // TODO: Create a function to write README file
     writeFile('README.md', readme, err => {
         err ? console.log(err.message) : console.log("Success! Your README has been created.");
     });
-    appendFile('README.md', licenseSection, (err) =>
-        err ? console.error(err) : console.log('License section appended!')
-    );
 };
 
 // Function call to initialize app
