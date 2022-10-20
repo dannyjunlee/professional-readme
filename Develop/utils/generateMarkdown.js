@@ -43,7 +43,15 @@ ${renderLicenseLink(license)}  ${renderLicenseBadge(license)}`
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.yourName}'s ${data.projName}
-## What Problem Does This Solve?
+## Table of Contents
+1. [What Problem Does This Solve](#what-problem-does-this-solve)
+2. [Motivation](#motivation)
+3. [The Why](#the-why)
+4. [Learning Outcomes](#learning-outcomes)
+5. [Contact Info](#contact-info)
+6. [Licenses](#licenses)
+
+## What Problem Does This Solve
   
 ${data.whatSolve}
 
@@ -59,7 +67,7 @@ ${data.why}
 
 ${data.whatLearn}
 
-## Contact Info:
+## Contact Info
 
 Please do not hesitate to reach out if you have any questions, comments, concerns, or opportunities.
 

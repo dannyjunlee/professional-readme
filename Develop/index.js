@@ -32,9 +32,9 @@ async function init() {
         linkedIn: await userInput("What is your LinkedIn ID?"),
         email: await userInput("What is your email address?"),
         phone: await userInput("What is your phone number?"),
+        whatSolve: await userInput("What problem does it solve?\n", true),
         motivation: await userInput("What was your motivation?\n", true),
         why: await userInput("Why did you build this project?\n", true),
-        whatSolve: await userInput("What problem does it solve?\n", true),
         whatLearn: await userInput("What did you learn?\n", true),
     };
 
